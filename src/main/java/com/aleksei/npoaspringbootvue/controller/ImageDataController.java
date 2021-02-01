@@ -1,6 +1,6 @@
 package com.aleksei.npoaspringbootvue.controller;
 
-import com.aleksei.npoaspringbootvue.dto.ImageDataDto;
+import com.aleksei.npoaspringbootvue.entity.ImageData;
 import com.aleksei.npoaspringbootvue.service.ImageDataService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -13,12 +13,16 @@ public class ImageDataController {
     private final ImageDataService service;
 
     @GetMapping()
-    public ImageDataDto getById() {
+    @CrossOrigin(origins = "http://localhost:8080")
+    public ImageData getById() {
+
         return service.getById(1L);
     }
 
     @PutMapping
-    public void update(@RequestBody ImageDataDto imageDataDto) {
-        service.save(imageDataDto);
+    @CrossOrigin(origins = "http://localhost:8080")
+    public void update(@RequestBody ImageData imageData) {
+
+        service.save(imageData);
     }
 }

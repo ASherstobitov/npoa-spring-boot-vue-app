@@ -1,10 +1,10 @@
 package com.aleksei.npoaspringbootvue.service;
 
-import com.aleksei.npoaspringbootvue.dto.ImageDataDto;
+import com.aleksei.npoaspringbootvue.entity.ImageData;
 
 public interface ImageDataService {
 
-    ImageDataDto getById(Long id);
+    ImageData getById(Long id);
 
-    void save(ImageDataDto imageDataDto);
+    void save(ImageData imageData);
 }
